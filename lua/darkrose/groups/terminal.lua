@@ -1,0 +1,16 @@
+vim.g.terminal_color_0 = C.bg_float
+vim.g.terminal_color_1 = C.red
+vim.g.terminal_color_2 = C.salmon
+vim.g.terminal_color_3 = C.orange
+vim.g.terminal_color_4 = C.dark_pink
+vim.g.terminal_color_5 = C.magenta
+vim.g.terminal_color_6 = C.fg_dark
+vim.g.terminal_color_7 = C.gray
+vim.g.terminal_color_8 = C.dark_purple
+vim.g.terminal_color_9 = C.light_red
+vim.g.terminal_color_10 = C.light_pink
+vim.g.terminal_color_11 = C.light_orange
+vim.g.terminal_color_12 = C.fg_gutter
+vim.g.terminal_color_13 = C.pink
+vim.g.terminal_color_14 = C.fg_gutter
+vim.g.terminal_color_15 = C.fg

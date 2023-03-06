@@ -1,0 +1,1 @@
+require("darkrose").setup({})
