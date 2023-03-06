@@ -8,6 +8,7 @@ local M = {
     plugins = {
       lazy = true,
       lsp = true,
+      treesitter = true,
     },
   },
 }
