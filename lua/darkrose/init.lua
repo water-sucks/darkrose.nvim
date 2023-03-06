@@ -13,6 +13,7 @@ local M = {
       lsp = true,
       telescope = true,
       treesitter = true,
+      which_key = true,
     },
   },
 }
