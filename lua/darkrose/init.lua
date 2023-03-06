@@ -11,6 +11,7 @@ local M = {
       indent_blankline = true,
       lazy = true,
       lsp = true,
+      telescope = true,
       treesitter = true,
     },
   },
