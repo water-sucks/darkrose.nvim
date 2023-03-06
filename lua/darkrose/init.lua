@@ -6,6 +6,7 @@ local M = {
     overrides = nil, -- Overrides for highlight groups
     -- Plugins to enable specialized highlights for
     plugins = {
+      bufferline = true,
       cmp = true,
       dap_ui = true,
       diffview = true,
