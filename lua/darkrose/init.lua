@@ -7,6 +7,7 @@ local M = {
     -- Plugins to enable specialized highlights for
     plugins = {
       gitsigns = true,
+      indent_blankline = true,
       lazy = true,
       lsp = true,
       treesitter = true,
