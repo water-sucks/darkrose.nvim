@@ -8,6 +8,7 @@ local M = {
     plugins = {
       cmp = true,
       dap_ui = true,
+      diffview = true,
       gitsigns = true,
       indent_blankline = true,
       lazy = true,
