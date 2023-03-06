@@ -17,6 +17,7 @@ local M = {
       telescope = true,
       treesitter = true,
       which_key = true,
+      vimtex = true,
     },
   },
 }
