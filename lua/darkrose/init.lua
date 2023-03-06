@@ -6,6 +6,7 @@ local M = {
     overrides = nil, -- Overrides for highlight groups
     -- Plugins to enable specialized highlights for
     plugins = {
+      lazy = true,
       lsp = true,
     },
   },
