@@ -1,0 +1,17 @@
+return {
+  NvimTreeNormal = { bg = C.bg_float },
+  NvimTreeEmptyFolderName = { fg = C.dark_pink },
+  NvimTreeFolderIcon = { fg = C.dark_pink },
+  NvimTreeFolderName = { fg = C.dark_pink },
+  NvimTreeGitDeleted = { fg = C.diff.delete },
+  NvimTreeGitDirty = { fg = C.orange },
+  NvimTreeGitNew = { fg = C.diff.add },
+  NvimTreeImageFile = { fg = C.fg },
+  NvimTreeOpenedFile = { fg = C.light_pink },
+  NvimTreeOpenedFolderName = { fg = C.red, style = "bold" },
+  NvimTreeRootFolder = { fg = C.magenta, style = "bold" },
+  NvimTreeSpecialFile = { fg = C.orange },
+  NvimTreeStatuslineNc = { fg = C.orange, bg = C.light_orange },
+  NvimTreeSymlink = { fg = C.pink },
+  NvimTreeWinSeparator = { fg = C.border },
+}
