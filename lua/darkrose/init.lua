@@ -6,6 +6,7 @@ local M = {
     overrides = nil, -- Overrides for highlight groups
     -- Plugins to enable specialized highlights for
     plugins = {
+      cmp = true,
       gitsigns = true,
       indent_blankline = true,
       lazy = true,
