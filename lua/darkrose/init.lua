@@ -14,6 +14,7 @@ local M = {
       indent_blankline = true,
       lazy = true,
       lsp = true,
+      neorg = true,
       nvim_tree = true,
       telescope = true,
       treesitter = true,
