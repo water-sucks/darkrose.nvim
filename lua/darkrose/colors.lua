@@ -1,4 +1,5 @@
 local red = "#9E4244"
+local dark_red = "#6D0011"
 local light_red = "#F85149"
 local orange = "#A26B35"
 local light_orange = "#F0883E"
@@ -20,8 +21,9 @@ local fg_dark = "#4D5566"
 local M = {}
 
 local colors = {
-  light_red = light_red,
   red = red,
+  dark_red = dark_red,
+  light_red = light_red,
   light_orange = light_orange,
   orange = orange,
   magenta = magenta,
