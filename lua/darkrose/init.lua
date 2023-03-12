@@ -15,6 +15,7 @@ local M = {
       lazy = true,
       lsp = true,
       neorg = true,
+      noice = true,
       nvim_tree = true,
       telescope = true,
       treesitter = true,
