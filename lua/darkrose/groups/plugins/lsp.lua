@@ -29,4 +29,20 @@ return {
   DiagnosticUnderlineWarn = { link = "LspDiagnosticsUnderlineWarning" }, -- Used to underline "Warning" diagnostics
   DiagnosticUnderlineInfo = { link = "LspDiagnosticsUnderlineInformation" }, -- Used to underline "Information" diagnostics
   DiagnosticUnderlineHint = { link = "LspDiagnosticsVirtualTextHint" }, -- Used to underline "Hint" diagnostics
+
+  ["@lsp.type.class"] = { link = "Class" },
+  ["@lsp.type.decorator"] = { link = "Function" },
+  ["@lsp.type.enum"] = { link = "Type" },
+  ["@lsp.type.enumMember"] = { link = "Constant" },
+  ["@lsp.type.function"] = { link = "Function" },
+  ["@lsp.type.interface"] = { link = "Type" },
+  ["@lsp.type.macro"] = { link = "Macro" },
+  ["@lsp.type.method"] = { link = "Function" },
+  ["@lsp.type.namespace"] = { fg = C.syntax.field },
+  ["@lsp.type.parameter"] = { fg = C.syntax.param },
+  ["@lsp.type.property"] = { fg = C.syntax.field },
+  ["@lsp.type.struct"] = { link = "Type" },
+  ["@lsp.type.type"] = { link = "Type" },
+  ["@lsp.type.typeParameter"] = { link = "Type" },
+  ["@lsp.type.variable"] = { link = "Identifier" },
 }
