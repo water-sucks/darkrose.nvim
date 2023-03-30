@@ -6,8 +6,7 @@ local light_orange = "#F0883E"
 local dark_purple = "#281C2B"
 local magenta = "#8B2950"
 local dark_pink = "#B76E79"
-local pink = "#EB6F92"
-local salmon = "#FF7979"
+local pink = "#FF7979"
 local light_pink = "#F6ACA7"
 local gray = "#8B8B8B"
 
@@ -27,7 +26,6 @@ local colors = {
   light_orange = light_orange,
   orange = orange,
   magenta = magenta,
-  salmon = salmon,
   pink = pink,
   dark_pink = dark_pink,
   light_pink = light_pink,
@@ -42,7 +40,7 @@ local colors = {
   fg_dark = fg_dark,
   fg_gutter = fg_gutter,
   border = gray,
-  cursor = salmon,
+  cursor = pink,
 
   error = light_red,
   warning = light_orange,
@@ -68,7 +66,7 @@ local colors = {
   },
 
   markup = {
-    link = salmon,
+    link = pink,
     h1 = red,
     h2 = orange,
     h3 = magenta,
