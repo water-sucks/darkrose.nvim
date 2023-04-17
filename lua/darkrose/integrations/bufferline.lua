@@ -1,94 +1,92 @@
-return function(config)
-  -- These are not valid highlights and shouldn't be enabled through setup
-  if O ~= nil then
-    return {}
-  end
+local M = {}
 
-  return function()
-    local c = require("darkrose.colors").get()
+M.generate = function()
+  local c = require("darkrose.colors").get()
+  local options = require("darkrose.config").options
 
-    local highlights = {
-      -- Buffers
-      background = { bg = c.bg },
-      buffer_visible = { fg = c.fg, bg = c.bg },
-      buffer_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
+  local highlights = {
+    -- Buffers
+    background = { bg = c.bg },
+    buffer_visible = { fg = c.fg, bg = c.bg },
+    buffer_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
 
-      -- Duplicate
-      duplicate = { fg = c.fg, bg = c.bg },
-      duplicate_visible = { fg = c.fg, bg = c.bg, italic = true },
-      duplicate_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
+    -- Duplicate
+    duplicate = { fg = c.fg, bg = c.bg },
+    duplicate_visible = { fg = c.fg, bg = c.bg, italic = true },
+    duplicate_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
 
-      -- Tabs
-      tab = { fg = c.fg, bg = c.bg },
-      tab_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
-      tab_separator = { fg = c.border, bg = c.bg },
-      tab_separator_selected = { fg = c.dark_pink, bg = c.bg },
-      tab_close = { fg = c.fg, bg = c.bg },
-      indicator_selected = { fg = c.dark_pink, bg = c.bg },
+    -- Tabs
+    tab = { fg = c.fg, bg = c.bg },
+    tab_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
+    tab_separator = { fg = c.border, bg = c.bg },
+    tab_close = { fg = c.fg, bg = c.bg },
+    tab_separator_selected = { fg = c.dark_pink, bg = c.bg },
+    indicator_selected = { fg = c.dark_pink, bg = c.bg },
 
-      -- Separators
-      separator = { fg = c.border, bg = c.bg },
-      separator_visible = { fg = c.border, bg = c.bg },
-      separator_selected = { fg = c.border, bg = c.bg },
-      offset_separator = { fg = c.border, bg = c.bg },
+    -- Separators
+    separator = { fg = c.border, bg = c.bg },
+    separator_visible = { fg = c.border, bg = c.bg },
+    separator_selected = { fg = c.border, bg = c.bg },
+    offset_separator = { fg = c.border, bg = c.bg },
 
-      -- Close buttons
-      close_button = { fg = c.fg, bg = c.bg },
-      close_button_visible = { fg = c.fg, bg = c.bg },
-      close_button_selected = { fg = c.fg, bg = c.bg },
+    -- Close buttons
+    close_button = { fg = c.fg, bg = c.bg },
+    close_button_visible = { fg = c.fg, bg = c.bg },
+    close_button_selected = { fg = c.fg, bg = c.bg },
 
-      -- Empty fill
-      fill = { bg = c.bg },
+    -- Empty fill
+    fill = { bg = c.bg },
 
-      -- Numbers
-      numbers = { fg = c.fg, bg = c.bg },
-      numbers_visible = { fg = c.fg, bg = c.bg },
-      numbers_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
+    -- Numbers
+    numbers = { fg = c.fg, bg = c.bg },
+    numbers_visible = { fg = c.fg, bg = c.bg },
+    numbers_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
 
-      -- Errors
-      error = { fg = c.error, bg = c.bg },
-      error_visible = { fg = c.error, bg = c.bg },
-      error_selected = { fg = c.error, bg = c.bg, bold = true, italic = false },
-      error_diagnostic = { fg = c.error, bg = c.bg },
-      error_diagnostic_visible = { fg = c.error, bg = c.bg },
-      error_diagnostic_selected = { fg = c.error, bg = c.bg, bold = true, italic = false },
+    -- Errors
+    error = { fg = c.error, bg = c.bg },
+    error_visible = { fg = c.error, bg = c.bg },
+    error_selected = { fg = c.error, bg = c.bg, bold = true, italic = false },
+    error_diagnostic = { fg = c.error, bg = c.bg },
+    error_diagnostic_visible = { fg = c.error, bg = c.bg },
+    error_diagnostic_selected = { fg = c.error, bg = c.bg, bold = true, italic = false },
 
-      -- Warnings
-      warning = { fg = c.warning, bg = c.bg },
-      warning_visible = { fg = c.warning, bg = c.bg },
-      warning_selected = { fg = c.warning, bg = c.bg, bold = true },
-      warning_diagnostic = { fg = c.warning, bg = c.bg },
-      warning_diagnostic_visible = { fg = c.warning, bg = c.bg },
-      warning_diagnostic_selected = { fg = c.warning, bg = c.bg },
+    -- Warnings
+    warning = { fg = c.warning, bg = c.bg },
+    warning_visible = { fg = c.warning, bg = c.bg },
+    warning_selected = { fg = c.warning, bg = c.bg, bold = true },
+    warning_diagnostic = { fg = c.warning, bg = c.bg },
+    warning_diagnostic_visible = { fg = c.warning, bg = c.bg },
+    warning_diagnostic_selected = { fg = c.warning, bg = c.bg },
 
-      -- Info
-      info = { fg = c.info, bg = c.bg },
-      info_visible = { fg = c.info, bg = c.bg },
-      info_selected = { fg = c.info, bg = c.bg, bold = true, italic = false },
-      info_diagnostic = { fg = c.info, bg = c.bg },
-      info_diagnostic_visible = { fg = c.info, bg = c.bg },
-      info_diagnostic_selected = { fg = c.info, bg = c.bg, bold = true, italic = false },
+    -- Info
+    info = { fg = c.info, bg = c.bg },
+    info_visible = { fg = c.info, bg = c.bg },
+    info_selected = { fg = c.info, bg = c.bg, bold = true, italic = false },
+    info_diagnostic = { fg = c.info, bg = c.bg },
+    info_diagnostic_visible = { fg = c.info, bg = c.bg },
+    info_diagnostic_selected = { fg = c.info, bg = c.bg, bold = true, italic = false },
 
-      -- Hint
-      hint = { fg = c.hint, bg = c.bg },
-      hint_visible = { fg = c.hint, bg = c.bg },
-      hint_selected = { fg = c.hint, bg = c.bg, bold = true, italic = false },
-      hint_diagnostic = { fg = c.hint, bg = c.bg },
-      hint_diagnostic_visible = { fg = c.hint, bg = c.bg },
-      hint_diagnostic_selected = { fg = c.hint, bg = c.bg, bold = true, italic = false },
+    -- Hint
+    hint = { fg = c.hint, bg = c.bg },
+    hint_visible = { fg = c.hint, bg = c.bg },
+    hint_selected = { fg = c.hint, bg = c.bg, bold = true, italic = false },
+    hint_diagnostic = { fg = c.hint, bg = c.bg },
+    hint_diagnostic_visible = { fg = c.hint, bg = c.bg },
+    hint_diagnostic_selected = { fg = c.hint, bg = c.bg, bold = true, italic = false },
 
-      -- Diagnostics
-      diagnostic = { fg = c.fg_gutter, bg = c.bg },
-      diagnostic_visible = { fg = c.fg_gutter, bg = c.bg },
-      diagnostic_selected = { fg = c.fg_gutter, bg = c.bg, bold = true },
+    -- Diagnostics
+    diagnostic = { fg = c.fg_gutter, bg = c.bg },
+    diagnostic_visible = { fg = c.fg_gutter, bg = c.bg },
+    diagnostic_selected = { fg = c.fg_gutter, bg = c.bg, bold = true },
 
-      -- Modified
-      modified = { fg = c.dark_pink, bg = c.bg },
-      modified_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
-    }
+    -- Modified
+    modified = { fg = c.dark_pink, bg = c.bg },
+    modified_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
+  }
 
-    highlights = vim.tbl_deep_extend("force", highlights, config or {})
+  highlights = vim.tbl_deep_extend("force", highlights, options.overrides() or {})
 
-    return highlights
-  end
+  return highlights
 end
+
+return M

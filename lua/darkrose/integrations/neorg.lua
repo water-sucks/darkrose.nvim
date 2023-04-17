@@ -1,11 +1,9 @@
-return function(config)
-  -- These are not valid highlights and shouldn't be enabled through setup
-  if O ~= nil then
-    return {}
-  end
+local M = {}
 
+M.generate = function()
   local c = require("darkrose.colors").get()
   local u = require("darkrose.utils")
+  local options = require("darkrose.config").options
 
   local highlights = {
     selection_window = {
@@ -311,7 +309,9 @@ return function(config)
     },
   }
 
-  highlights = vim.tbl_deep_extend("force", highlights, config or {})
+  highlights = vim.tbl_deep_extend("force", highlights, options.overrides() or {})
 
   return highlights
 end
+
+return M
