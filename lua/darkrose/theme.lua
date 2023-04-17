@@ -119,34 +119,23 @@ M.generate = function()
     -- Language-specific Syntax Highlighting
 
     -- LSP Groups
-    LspReferenceText = { bg = c.bg_visual }, -- used for highlighting "text" references
-    LspReferenceRead = { link = "LspReferenceText" }, -- used for highlighting "read" references
-    LspReferenceWrite = { link = "LspReferenceText" }, -- used for highlighting "write" references
-
-    LspDiagnosticsDefaultError = { fg = c.error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning = { fg = c.warning }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation = { fg = c.info }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint = { fg = c.hint }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsVirtualTextError = { fg = u.shade(c.error, 50), bg = c.error }, -- Used for "Error" diagnostic virtual text
-    LspDiagnosticsVirtualTextWarning = { fg = u.shade(c.warning, 50), bg = c.warning }, -- Used for "Warning" diagnostic virtual text
-    LspDiagnosticsVirtualTextInformation = { fg = u.shade(c.info, 50), bg = c.info }, -- Used for "Information" diagnostic virtual text
-    LspDiagnosticsVirtualTextHint = { fg = u.shade(c.hint, 50), bg = c.hint }, -- Used for "Hint" diagnostic virtual text
-    LspDiagnosticsUnderlineError = { style = "undercurl", sp = c.error }, -- Used to underline "Error" diagnostics
-    LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = c.warning }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = c.info }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint = { style = "undercurl", sp = c.hint }, -- Used to underline "Hint" diagnostics
-    LspDiagnosticsError = { fg = c.error },
-    LspDiagnosticsWarning = { fg = c.warning },
-    LspDiagnosticsInformation = { fg = c.info },
-    LspDiagnosticsHint = { fg = c.hint },
-    DiagnosticError = { link = "LspDiagnosticsDefaultError" }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo = { link = "LspDiagnosticsDefaultInformation" }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticHint = { link = "LspDiagnosticsDefaultHint" }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    DiagnosticUnderlineError = { link = "LspDiagnosticsUnderlineError" }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn = { link = "LspDiagnosticsUnderlineWarning" }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo = { link = "LspDiagnosticsUnderlineInformation" }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { link = "LspDiagnosticsVirtualTextHint" }, -- Used to underline "Hint" diagnostics
+    LspReferenceText = { bg = c.bg_visual },
+    LspReferenceRead = { link = "LspReferenceText" },
+    LspReferenceWrite = { link = "LspReferenceText" },
+    LspCodeLens = { fg = c.gray },
+    LspSignatureActiveParameter = { fg = c.syntax.param, bold = true },
+    DiagnosticError = { fg = c.error },
+    DiagnosticWarning = { fg = c.warning },
+    DiagnosticInformation = { fg = c.info },
+    DiagnosticHint = { fg = c.hint },
+    DiagnosticVirtualTextError = { fg = u.shade(c.error, 20), bg = c.bg_float },
+    DiagnosticVirtualTextWarn = { fg = u.shade(c.warning, 20), bg = c.bg_float },
+    DiagnosticVirtualTextInfo = { fg = u.shade(c.info, 20), bg = c.bg_float },
+    DiagnosticVirtualTextHint = { fg = u.shade(c.hint, 20), bg = c.bg_float },
+    DiagnosticUnderlineError = { style = "undercurl", sp = c.error },
+    DiagnosticUnderlineWarn = { style = "undercurl", sp = c.warning },
+    DiagnosticUnderlineInfo = { style = "undercurl", sp = c.info },
+    DiagnosticUnderlineHint = { style = "undercurl", sp = c.hint },
 
     -- LSP Semantic Highlights
     ["@lsp.type.class"] = { link = "Class" },
