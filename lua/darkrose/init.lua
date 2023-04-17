@@ -3,25 +3,7 @@ local config = require("darkrose.config")
 local M = {
   options = {
     colors = {}, -- Overrides for colors
-    overrides = nil, -- Overrides for highlight groups
-    -- Plugins to enable specialized highlights for
-    plugins = {
-      bufferline = true,
-      cmp = true,
-      dap_ui = true,
-      diffview = true,
-      gitsigns = true,
-      indent_blankline = true,
-      lazy = true,
-      lsp = true,
-      neorg = true,
-      noice = true,
-      nvim_tree = true,
-      telescope = true,
-      treesitter = true,
-      which_key = true,
-      vimtex = true,
-    },
+    overrides = function() end, -- Overrides for highlight groups
   },
 }
 
