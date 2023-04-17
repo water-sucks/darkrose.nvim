@@ -1,5 +1,9 @@
 local M = {}
 
+local function clamp(component)
+  return math.min(math.max(component, 0), 255)
+end
+
 -- Create a new shade of a provided color hex code
 -- @param hex string Color hex code
 -- @param amount number Amount to darken color by
@@ -10,11 +14,15 @@ M.shade = function(hex, amount)
   assert(hex:find(pattern) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(hex))
 
   local num = tonumber(hex:match(pattern), 16)
-  local r = bit.rshift(num, 16) + amount
-  local b = bit.band(bit.rshift(num, 8), 0x00FF) + amount
-  local g = bit.band(num, 0x0000FF) + amount
-  local new_color = bit.bor(g, bit.bor(bit.lshift(b, 8), bit.lshift(r, 16)))
-  return string.format("#%x", new_color)
+  local r = math.floor(num / 0x10000) + amount
+  local g = (math.floor(num / 0x100) % 0x100) + amount
+  local b = (num % 0x100) + amount
+  local new_hex = string.format("#%x", clamp(r) * 0x10000 + clamp(g) * 0x100 + clamp(b))
+
+  -- Enable this assertion to check if the clamp is working properly.
+  -- assert(new_hex:find(pattern) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(new_hex))
+
+  return new_hex
 end
 
 M.highlight = function(name, hi)
