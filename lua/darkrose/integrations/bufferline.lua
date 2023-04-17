@@ -1,8 +1,7 @@
 local M = {}
 
-M.generate = function()
+M.generate = function(overrides)
   local c = require("darkrose.colors").get()
-  local options = require("darkrose.config").options
 
   local highlights = {
     -- Buffers
@@ -84,7 +83,9 @@ M.generate = function()
     modified_selected = { fg = c.dark_pink, bg = c.bg, bold = true, italic = false },
   }
 
-  highlights = vim.tbl_deep_extend("force", highlights, options.overrides() or {})
+  if overrides ~= nil then
+    highlights = vim.tbl_deep_extend("force", highlights, overrides(c) or {})
+  end
 
   return highlights
 end

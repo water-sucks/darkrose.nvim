@@ -89,8 +89,11 @@ Pass the highlighting integration as an argument to bufferline.nvim's setup
 function. It must be loaded after darkrose is set up for this to work.
 
 ```lua
+-- Define overrides to any highlight arguments here; this is an optional argument
+-- to the generate function.
+local overrides = {}
 require("bufferline").setup({
-    highlights = require("darkrose.integrations.bufferline").generate(),
+    highlights = require("darkrose.integrations.bufferline").generate(overrides),
 })
 ```
 
@@ -103,11 +106,14 @@ Pass the highlighting integration as an argument to neorg's setup function.
 It must be loaded after darkrose is set up for this to work.
 
 ```lua
+-- Define overrides to any highlight arguments here; this is an optional argument
+-- to the generate function.
+local overrides = {}
 require("neorg").setup({
     load = {
         ["core.highlights"] = {
             config = {
-                highlights = require("darkrose.integrations.neorg").generate(),
+                highlights = require("darkrose.integrations.neorg").generate(overrides),
             },
         },
     },
