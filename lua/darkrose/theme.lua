@@ -117,6 +117,23 @@ M.generate = function()
     Todo = { fg = c.fg, bg = c.red }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- Language-specific Syntax Highlighting
+    markdownH1 = { fg = c.markup.h1 },
+    markdownH2 = { fg = c.markup.h2 },
+    markdownH3 = { fg = c.markup.h3 },
+    markdownH4 = { fg = c.markup.h4 },
+    markdownH5 = { fg = c.markup.h5 },
+    markdownH6 = { fg = c.markup.h6 },
+    markdownH1Delimiter = { fg = c.markup.h1 },
+    markdownH2Delimiter = { fg = c.markup.h2 },
+    markdownH3Delimiter = { fg = c.markup.h3 },
+    markdownH4Delimiter = { fg = c.markup.h4 },
+    markdownH5Delimiter = { fg = c.markup.h5 },
+    markdownH6Delimiter = { fg = c.markup.h6 },
+    markdownLinkText = { fg = c.fg_gutter },
+    markdownUrl = { fg = c.markup.link },
+    markdownCode = { fg = c.gray },
+    markdownCodeBlock = { fg = c.gray },
+    markdownCodeDelimiter = { fg = c.gray },
 
     -- LSP Groups
     LspReferenceText = { bg = c.bg_visual },
