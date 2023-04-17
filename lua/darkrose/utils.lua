@@ -35,24 +35,11 @@ M.apply_highlights = function()
   theme.highlights = vim.tbl_deep_extend("force", theme.highlights, options.overrides(colors) or {})
 
   for name, highlight in pairs(theme.highlights) do
-    M.highlight(name, highlight)
+    vim.api.nvim_set_hl(0, name, highlight)
   end
 
   for prop, color in pairs(theme.terminal) do
     vim.api.nvim_set_var(prop, color)
-  end
-end
-
-M.highlight = function(name, hi)
-  local style = hi.style and "gui=" .. hi.style or "gui=NONE"
-  local fg = hi.fg and "guifg=" .. hi.fg or "guifg=NONE"
-  local bg = hi.bg and "guibg=" .. hi.bg or "guibg=NONE"
-  local sp = hi.sp and "guisp=" .. hi.sp or ""
-
-  if hi.link then
-    vim.cmd(string.format("highlight! link %s %s", name, hi.link))
-  else
-    vim.cmd(string.format("highlight! %s %s %s %s %s", name, style, fg, bg, sp))
   end
 end
 

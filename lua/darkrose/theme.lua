@@ -40,10 +40,10 @@ M.generate = function()
     LineNr = { fg = c.fg_dark }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = u.shade(c.fg_dark, 50) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.fg, bg = c.fg_dark }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg = { fg = c.fg, style = "bold" }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea = { fg = c.fg, style = "NONE" }, -- Area for messages and cmdline
+    ModeMsg = { fg = c.fg, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MsgArea = { fg = c.fg }, -- Area for messages and cmdline
     MoreMsg = { fg = c.fg_dark }, -- |more-prompt|
-    Question = { fg = c.red, style = "bold" },
+    Question = { fg = c.red, bold = true },
     NonText = { fg = c.fg_dark }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal = { fg = c.fg, bg = c.bg }, -- normal text
     NormalNC = { fg = c.fg, bg = c.bg }, -- normal text in non-current windows
@@ -55,19 +55,19 @@ M.generate = function()
     PmenuSel = { fg = c.fg, bg = u.shade(c.bg_float, 15) }, -- Popup menu: selected item.
     PmenuSbar = { bg = c.fg_gutter }, -- Popup menu: scrollbar.
     PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
-    QuickFixLine = { bg = c.markup.link, style = "bold" }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    QuickFixLine = { bg = c.markup.link, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     qfLineNr = { fg = c.red },
     qfFileName = { fg = c.markup.link },
-    SpellBad = { sp = c.error, style = "undercurl" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap = { sp = c.warning, style = "undercurl" }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal = { sp = c.info, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    SpellRare = { sp = c.hint, style = "undercurl" }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+    SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine = { fg = c.bg, bg = c.fg_dark }, -- status line of current window
     StatusLineNC = { fg = c.fg, bg = c.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine = { fg = c.fg, bg = c.bg }, -- tab pages line, not active tab page label
     TabLineFill = { bg = c.bg_float }, -- tab pages line, where there are no labels
     TabLineSel = { link = "PmenuSel" }, -- tab pages line, active tab page label
-    Title = { fg = c.magenta, style = "bold" }, -- titles for output from ":set all", ":autocmd" etc.
+    Title = { fg = c.magenta, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.warning }, -- warning messages
@@ -84,17 +84,17 @@ M.generate = function()
     Character = { fg = c.syntax.string }, --  a character constant: 'c', '\n'
     Number = { fg = c.syntax.literal }, --   a number constant: 234, 0xff
     Float = { fg = c.syntax.literal }, --    a floating point constant: 2.3e10
-    Boolean = { fg = c.syntax.literal, style = "italic" }, --  a boolean constant: TRUE, false
-    Identifier = { fg = c.syntax.variable, style = "NONE" }, -- (preferred) any variable name
-    Function = { fg = c.syntax.func, style = "NONE" }, -- function name (also: methods for classes)
+    Boolean = { fg = c.syntax.literal, italic = true }, --  a boolean constant: TRUE, false
+    Identifier = { fg = c.syntax.variable }, -- (preferred) any variable name
+    Function = { fg = c.syntax.func }, -- function name (also: methods for classes)
     Statement = { fg = c.syntax.keyword }, -- (preferred) any statement
     Conditional = { link = "Keyword" }, --  if, then, else, endif, switch, etc.
     Repeat = { link = "Keyword" }, --   for, do, while, etc.
     Label = { link = "Keyword" }, --    case, default, etc.
     Operator = { fg = c.syntax.func }, -- "sizeof", "+", "*", etc.
-    Keyword = { fg = c.syntax.keyword, style = "italic" }, --  any other keyword
+    Keyword = { fg = c.syntax.keyword, italic = true }, --  any other keyword
     Exception = { link = "Keyword" }, --  try, catch, throw
-    PreProc = { fg = c.syntax.keyword, style = "italic" }, -- (preferred) generic Preprocessor
+    PreProc = { fg = c.syntax.keyword, italic = true }, -- (preferred) generic Preprocessor
     Include = { link = "PreProc" }, --  preprocessor #include
     Define = { link = "PreProc" }, --   preprocessor #define
     Macro = { link = "PreProc" }, --    same as Define
@@ -108,9 +108,9 @@ M.generate = function()
     Tag = { link = "Special" }, --    you can use CTRL-] on this
     Delimiter = { link = "Special" }, --  character that needs attention
     Debug = { link = "Special" }, --    debugging statements
-    Underlined = { style = "underline" }, -- (preferred) text that stands out, HTML links
-    Bold = { style = "bold" },
-    Italic = { style = "italic" },
+    Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
+    Bold = { bold = true },
+    Italic = { italic = true },
     -- ("Ignore", below, may be invisible...)
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
     Error = { fg = c.error }, -- (preferred) any erroneous construct
@@ -132,10 +132,10 @@ M.generate = function()
     DiagnosticVirtualTextWarn = { fg = u.shade(c.warning, 20), bg = c.bg_float },
     DiagnosticVirtualTextInfo = { fg = u.shade(c.info, 20), bg = c.bg_float },
     DiagnosticVirtualTextHint = { fg = u.shade(c.hint, 20), bg = c.bg_float },
-    DiagnosticUnderlineError = { style = "undercurl", sp = c.error },
-    DiagnosticUnderlineWarn = { style = "undercurl", sp = c.warning },
-    DiagnosticUnderlineInfo = { style = "undercurl", sp = c.info },
-    DiagnosticUnderlineHint = { style = "undercurl", sp = c.hint },
+    DiagnosticUnderlineError = { undercurl = true, sp = c.error },
+    DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning },
+    DiagnosticUnderlineInfo = { undercurl = true, sp = c.info },
+    DiagnosticUnderlineHint = { undercurl = true, sp = c.hint },
 
     -- LSP Semantic Highlights
     ["@lsp.type.class"] = { link = "Class" },
@@ -164,7 +164,7 @@ M.generate = function()
     ["@field"] = { fg = c.syntax.field },
     ["@constructor"] = { link = "Function" },
     ["@function"] = { link = "Function" },
-    ["@function.builtin"] = { fg = c.syntax.func, style = "italic" },
+    ["@function.builtin"] = { fg = c.syntax.func, italic = true },
     ["@error"] = { link = "Error" },
     ["@keyword"] = { link = "Keyword" },
     ["@keyword.operator"] = { link = "Keyword" },
@@ -178,7 +178,7 @@ M.generate = function()
     ["@punctuation.delimiter"] = { fg = c.fg },
     ["@punctuation.special"] = { fg = c.fg },
     ["@string"] = { fg = c.syntax.string },
-    ["@string.escape"] = { fg = c.syntax.string, style = "bold" },
+    ["@string.escape"] = { fg = c.syntax.string, bold = true },
     ["@string.regex"] = { fg = c.syntax.variable },
     ["@string.special"] = { link = "@string" },
     ["@label"] = { fg = c.syntax.field },
@@ -190,7 +190,7 @@ M.generate = function()
     ["@text.strong"] = { link = "Bold" },
     ["@text.emphasis"] = { link = "Italic" },
     ["@text.underline"] = { link = "Underlined" },
-    ["@text.strike"] = { style = "strikethrough" },
+    ["@text.strike"] = { strikethrough = true },
     ["@text.math"] = { link = "Special" },
     ["@text.environment"] = { link = "Macro" },
     ["@text.environment.name"] = { link = "Type" },
@@ -203,7 +203,7 @@ M.generate = function()
     ["@type"] = { link = "Type" },
     ["@type.qualifier"] = { link = "Keyword" },
     ["@variable"] = { fg = c.syntax.variable },
-    ["@variable.builtin"] = { fg = c.syntax.variable, style = "italic" },
+    ["@variable.builtin"] = { fg = c.syntax.variable, italic = true },
 
     -- nvim-treesitter playground
     nodeType = { fg = c.syntax.string },
@@ -226,7 +226,7 @@ M.generate = function()
 
     -- nvim-cmp
     CmpItemAbbr = { fg = c.fg },
-    CmpItemAbbrDeprecated = { fg = c.fg, style = "strikethrough" },
+    CmpItemAbbrDeprecated = { fg = c.fg, strikethrough = true },
     CmpItemAbbrMatch = { fg = c.orange },
     CmpItemAbbrMatchFuzzy = { fg = u.shade(c.orange, -20) },
     CmpItemKind = { fg = c.red },
@@ -269,7 +269,7 @@ M.generate = function()
     IndentBlanklineChar = { fg = c.fg_dark },
     IndentBlanklineSpaceChar = { fg = c.fg_dark },
     IndentBlanklineSpaceCharBlankline = { fg = c.fg_dark },
-    IndentBlanklineContextStart = { sp = c.light_pink, style = "underline" },
+    IndentBlanklineContextStart = { sp = c.light_pink, underline = true },
     IndentBlanklineContextChar = { fg = c.light_pink },
     IndentBlanklineContextSpaceChar = { fg = c.fg_dark },
     IndentBlanklineIndent1 = { fg = c.fg_dark },
@@ -285,7 +285,7 @@ M.generate = function()
     LazyComment = { link = "Comment" },
     LazyCommit = { fg = c.red },
     LazyCommitIssue = { fg = c.markup.link },
-    LazyCommitScope = { fg = c.fg, style = "Italic" },
+    LazyCommitScope = { fg = c.fg, italic = true },
     LazyCommitType = { fg = c.magenta },
     LazyDir = { link = "Directory" },
     LazyH1 = { bg = c.orange },
@@ -339,7 +339,7 @@ M.generate = function()
     NoiceCompletionItemKindEnumMember = { fg = c.syntax.field },
     NoiceCompletionItemKindOperator = { fg = c.red },
     NoiceCompletionItemKindSnippet = { fg = c.red },
-    NoiceConfirm = { fg = c.red, style = "bold" },
+    NoiceConfirm = { fg = c.red, bold = true },
     NoiceConfirmBorder = { fg = c.dark_pink },
 
     -- which-key.nvim
@@ -360,8 +360,8 @@ M.generate = function()
     NvimTreeGitNew = { fg = c.diff.add },
     NvimTreeImageFile = { fg = c.fg },
     NvimTreeOpenedFile = { fg = c.light_pink },
-    NvimTreeOpenedFolderName = { fg = c.red, style = "bold" },
-    NvimTreeRootFolder = { fg = c.magenta, style = "bold" },
+    NvimTreeOpenedFolderName = { fg = c.red, bold = true },
+    NvimTreeRootFolder = { fg = c.magenta, bold = true },
     NvimTreeSpecialFile = { fg = c.orange },
     NvimTreeStatuslineNc = { fg = c.orange, bg = c.light_orange },
     NvimTreeSymlink = { fg = c.pink },
@@ -381,10 +381,10 @@ M.generate = function()
     DapUIScope = { fg = c.red },
     DapUIType = { fg = c.red },
     DapUIValue = { fg = c.orange },
-    DapUIModifiedValue = { fg = c.orange, style = "bold" },
+    DapUIModifiedValue = { fg = c.orange, bold = true },
     DapUIDecoration = { fg = c.gray },
     DapUIThread = { fg = c.red },
-    DapUIStoppedThread = { fg = c.red, style = "italic" },
+    DapUIStoppedThread = { fg = c.red, italic = true },
     DapUIFrameName = { fg = c.magenta },
     DapUISource = { fg = c.red },
     DapUILineNumber = { link = "LineNr" },
