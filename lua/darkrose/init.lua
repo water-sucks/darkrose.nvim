@@ -1,29 +1,20 @@
-local config = require("darkrose.config")
+local utils = require("darkrose.utils")
 
-local M = {
-  options = {
-    colors = {}, -- Overrides for colors
-    overrides = function() end, -- Overrides for highlight groups
-  },
-}
+local M = {}
 
-function M.setup(user_config)
-  if user_config ~= nil then
-    M.options = vim.tbl_deep_extend("force", M.options, user_config)
-  end
-
-  M.colorscheme()
+function M.setup(options)
+  require("darkrose.config").setup(options)
 end
 
 function M.colorscheme()
-  -- if vim.g.colors_name then
-  --   vim.cmd("hi clear")
-  -- end
+  if vim.g.colors_name then
+    vim.cmd("hi clear")
+  end
 
   vim.opt.termguicolors = true
   vim.g.colors_name = "darkrose"
 
-  config.apply_highlights(M.options)
+  utils.apply_highlights()
 end
 
 return M

@@ -77,7 +77,7 @@ local colors = {
 }
 
 M.get = function()
-  local options = require("darkrose").options
+  local options = require("darkrose.config").options
   return vim.tbl_deep_extend("force", colors, options.colors)
 end
 

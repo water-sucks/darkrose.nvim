@@ -25,6 +25,24 @@ M.shade = function(hex, amount)
   return new_hex
 end
 
+M.apply_highlights = function()
+  local options = require("darkrose.config").options
+  local colors = require("darkrose.colors").get()
+
+  local theme = require("darkrose.theme").generate()
+
+  -- Apply overrides to colors
+  theme.highlights = vim.tbl_deep_extend("force", theme.highlights, options.overrides(colors) or {})
+
+  for name, highlight in pairs(theme.highlights) do
+    M.highlight(name, highlight)
+  end
+
+  for prop, color in pairs(theme.terminal) do
+    vim.api.nvim_set_var(prop, color)
+  end
+end
+
 M.highlight = function(name, hi)
   local style = hi.style and "gui=" .. hi.style or "gui=NONE"
   local fg = hi.fg and "guifg=" .. hi.fg or "guifg=NONE"
