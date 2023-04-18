@@ -415,6 +415,11 @@ M.generate = function()
     DapUIBreakpointsLine = { fg = c.gray },
     DapUIBreakpointsDisabledLine = { fg = c.gray },
 
+    -- leap.nvim
+    LeapMatch = { underline = true },
+    LeapLabelPrimary = { fg = c.bg_float, bg = c.pink },
+    LeapLabelSecondary = { fg = c.bg_float, bg = c.red },
+
     -- vimtex
     texBeginEnd = { fg = c.syntax.keyword },
     texBeginEndName = { link = "Title" },
