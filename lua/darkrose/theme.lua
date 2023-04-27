@@ -420,6 +420,10 @@ M.generate = function()
     LeapLabelPrimary = { fg = c.bg_float, bg = c.pink },
     LeapLabelSecondary = { fg = c.bg_float, bg = c.red },
 
+    -- fidget.nvim
+    FidgetTitle = { fg = c.pink, bold = true },
+    FidgetTask = { fg = c.fg_dark },
+
     -- vimtex
     texBeginEnd = { fg = c.syntax.keyword },
     texBeginEndName = { link = "Title" },

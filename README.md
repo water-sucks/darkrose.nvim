@@ -63,6 +63,7 @@ feel free to add more in a PR!):
 - LSP semantic highlighting
 - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)\*
 - [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
