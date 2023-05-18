@@ -92,74 +92,40 @@ M.generate = function(overrides)
 
     error = "+@error",
 
-    -- todo_items currently not supported, see linked issue
-    -- https://github.com/nvim-neorg/neorg/issues/697
-    -- todo_items = {
-    --   undone = {
-    --     ["1"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --     ["2"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --     ["3"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --     ["4"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --     ["5"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --     ["6"] = { [""] = "+@punctuation.delimiter", content = "+@none" },
-    --   },
-    --   pending = {
-    --     ["1"] = { [""] = "+@namespace", content = "+@none" },
-    --     ["2"] = { [""] = "+@namespace", content = "+@none" },
-    --     ["3"] = { [""] = "+@namespace", content = "+@none" },
-    --     ["4"] = { [""] = "+@namespace", content = "+@none" },
-    --     ["5"] = { [""] = "+@namespace", content = "+@none" },
-    --     ["6"] = { [""] = "+@namespace", content = "+@none" },
-    --   },
-    --   done = {
-    --     ["1"] = { [""] = "+@string", content = "+@none" },
-    --     ["2"] = { [""] = "+@string", content = "+@none" },
-    --     ["3"] = { [""] = "+@string", content = "+@none" },
-    --     ["4"] = { [""] = "+@string", content = "+@none" },
-    --     ["5"] = { [""] = "+@string", content = "+@none" },
-    --     ["6"] = { [""] = "+@string", content = "+@none" },
-    --   },
-    --   on_hold = {
-    --     ["1"] = { [""] = "+@text.note", content = "+@none" },
-    --     ["2"] = { [""] = "+@text.note", content = "+@none" },
-    --     ["3"] = { [""] = "+@text.note", content = "+@none" },
-    --     ["4"] = { [""] = "+@text.note", content = "+@none" },
-    --     ["5"] = { [""] = "+@text.note", content = "+@none" },
-    --     ["6"] = { [""] = "+@text.note", content = "+@none" },
-    --   },
-    --   cancelled = {
-    --     ["1"] = { [""] = "+Whitespace", content = "+@none" },
-    --     ["2"] = { [""] = "+Whitespace", content = "+@none" },
-    --     ["3"] = { [""] = "+Whitespace", content = "+@none" },
-    --     ["4"] = { [""] = "+Whitespace", content = "+@none" },
-    --     ["5"] = { [""] = "+Whitespace", content = "+@none" },
-    --     ["6"] = { [""] = "+Whitespace", content = "+@none" },
-    --   },
-    --   urgent = {
-    --     ["1"] = { [""] = "+@text.danger", content = "+@none" },
-    --     ["2"] = { [""] = "+@text.danger", content = "+@none" },
-    --     ["3"] = { [""] = "+@text.danger", content = "+@none" },
-    --     ["4"] = { [""] = "+@text.danger", content = "+@none" },
-    --     ["5"] = { [""] = "+@text.danger", content = "+@none" },
-    --     ["6"] = { [""] = "+@text.danger", content = "+@none" },
-    --   },
-    --   uncertain = {
-    --     ["1"] = { [""] = "+@boolean", content = "+@none" },
-    --     ["2"] = { [""] = "+@boolean", content = "+@none" },
-    --     ["3"] = { [""] = "+@boolean", content = "+@none" },
-    --     ["4"] = { [""] = "+@boolean", content = "+@none" },
-    --     ["5"] = { [""] = "+@boolean", content = "+@none" },
-    --     ["6"] = { [""] = "+@boolean", content = "+@none" },
-    --   },
-    --   recurring = {
-    --     ["1"] = { [""] = "+@repeat", content = "+@none" },
-    --     ["2"] = { [""] = "+@repeat", content = "+@none" },
-    --     ["3"] = { [""] = "+@repeat", content = "+@none" },
-    --     ["4"] = { [""] = "+@repeat", content = "+@none" },
-    --     ["5"] = { [""] = "+@repeat", content = "+@none" },
-    --     ["6"] = { [""] = "+@repeat", content = "+@none" },
-    --   },
-    -- },
+    todo_items = {
+      undone = {
+        [""] = "guifg=" .. c.fg,
+        content = "+@none",
+      },
+      pending = {
+        [""] = "guifg=" .. c.dark_pink,
+        content = "+@none",
+      },
+      done = {
+        [""] = "guifg=" .. c.red,
+        content = "+@none",
+      },
+      on_hold = {
+        [""] = "guifg=" .. c.gray,
+        content = "+@none",
+      },
+      cancelled = {
+        [""] = "guifg=" .. c.fg_dark,
+        content = "+@none",
+      },
+      urgent = {
+        [""] = "guifg=" .. c.light_red,
+        content = "+@none",
+      },
+      uncertain = {
+        [""] = "guifg=" .. c.orange,
+        content = "+@none",
+      },
+      recurring = {
+        [""] = "guifg=" .. c.pink,
+        content = "+@none",
+      },
+    },
 
     lists = {
       unordered = {
