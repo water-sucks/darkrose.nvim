@@ -129,6 +129,9 @@ M.generate = function(overrides)
 
     lists = {
       unordered = {
+        prefix = "guifg=" .. c.markup.h1,
+
+        -- Legacy config, may remove later
         ["1"] = {
           title = "guifg=" .. c.markup.h1,
           prefix = "guifg=" .. c.markup.h1,
@@ -156,6 +159,9 @@ M.generate = function(overrides)
       },
 
       ordered = {
+        prefix = "guifg=" .. c.markup.h1,
+
+        -- Legacy config, may remove later
         ["1"] = { prefix = "guifg=" .. c.markup.h1 },
         ["2"] = { prefix = "guifg=" .. c.markup.h2 },
         ["3"] = { prefix = "guifg=" .. c.markup.h3 },
