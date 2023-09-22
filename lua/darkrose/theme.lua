@@ -144,6 +144,7 @@ M.generate = function()
     DiagnosticError = { fg = c.error },
     DiagnosticWarning = { fg = c.warning },
     DiagnosticWarn = { link = "DiagnosticWarning" },
+    DiagnosticInfo = { fg = c.info },
     DiagnosticInformation = { fg = c.info },
     DiagnosticHint = { fg = c.hint },
     DiagnosticOk = { fg = c.info },
