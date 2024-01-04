@@ -29,7 +29,7 @@ M.generate = function()
     DiffText = { fg = c.fg_gutter }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = { fg = c.fg_dark }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = { fg = c.error }, -- error messages on the command line
-    VertSplit = { fg = c.border, bg = c.bg }, -- the column separating vertically split windows
+    VertSplit = { link = "VertSplit" }, -- the column separating vertically split windows
     Folded = { fg = c.fg, bg = c.bg_visual }, -- line used for closed folds
     FoldColumn = { link = "Folded" }, -- 'foldcolumn'
     SignColumn = { fg = c.fg_gutter, bg = c.bg }, -- column where |signs| are displayed
@@ -73,6 +73,7 @@ M.generate = function()
     WarningMsg = { fg = c.warning }, -- warning messages
     Whitespace = { fg = c.gray }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = { bg = u.shade(c.bg_float, 15) }, -- current match in 'wildmenu' completion
+    WinSeparator = { fg = c.border, bg = c.bg },
     healthError = { fg = c.error },
     healthSuccess = { fg = c.info },
     healthWarning = { fg = c.warning },
