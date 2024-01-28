@@ -221,6 +221,8 @@ M.generate = function()
     ["@text.note"] = { link = "SpecialComment" },
     ["@text.warning"] = { link = "Todo" },
     ["@text.danger"] = { link = "WarningMsg" },
+    ["@diff.plus.diff"] = { link = "diffAdded" },
+    ["@diff.minus.diff"] = { link = "diffRemoved" },
     ["@text.diff.add.diff"] = { link = "diffAdded" },
     ["@text.diff.change.diff"] = { link = "diffChanged" },
     ["@text.diff.delete.diff"] = { link = "diffRemoved" },
