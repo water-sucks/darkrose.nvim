@@ -11,7 +11,7 @@ dark theme lovers.
 
 ## Requirements
 
-- Neovim >= 0.9.0
+-   Neovim >= 0.9.0
 
 ## Installation
 
@@ -45,7 +45,13 @@ require("darkrose").setup({
             Class = { fg = c.magenta },
             ["@variable"] = { fg = c.fg_dark },
         }
-    end
+    end,
+    -- Styles to enable or disable
+    styles = {
+        bold = true, -- Enable bold highlights for some highlight groups
+        italics = true, -- Enable italic highlights for some highlight groups
+        underline = true, -- Enable underline highlights for some highlight groups
+    }
 })
 vim.cmd.colorscheme("darkrose")
 ```
@@ -59,23 +65,23 @@ names are defined [here](lua/darkrose/colors.lua).
 These are plugins explicitly supported by the colorscheme (more is always better,
 feel free to add more in a PR!):
 
-- LSP diagnostics
-- LSP semantic highlighting
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)\*
-- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
-- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [lazy.nvim](https://github.com/folke/lazy.nvim)
-- [neorg](https://github.com/nvim-neorg/neorg)\*
-- [noice.nvim](https://github.com/folke/noice.nvim)
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [vimtex](https://github.com/lervag/vimtex)
-- [which-key.nvim](https://github.com/folke/which-key.nvim)
+-   LSP diagnostics
+-   LSP semantic highlighting
+-   [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)\*
+-   [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+-   [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+-   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+-   [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+-   [lazy.nvim](https://github.com/folke/lazy.nvim)
+-   [neorg](https://github.com/nvim-neorg/neorg)\*
+-   [noice.nvim](https://github.com/folke/noice.nvim)
+-   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+-   [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+-   [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+-   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+-   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+-   [vimtex](https://github.com/lervag/vimtex)
+-   [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### Special Integrations
 
@@ -138,8 +144,8 @@ and when more plugins and languages are supported.
 
 ## Thanks
 
-- [rose-pine/neovim](https://github.com/rose-pine/neovim) :: for inspiring the colorscheme
-- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) :: for helping
-  me structure my code properly
-- [catppuccin/nvim](https://github.com/catppuccin/nvim) :: for the special
-  integrations idea and implementation
+-   [rose-pine/neovim](https://github.com/rose-pine/neovim) :: for inspiring the colorscheme
+-   [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) :: for helping
+    me structure my code properly
+-   [catppuccin/nvim](https://github.com/catppuccin/nvim) :: for the special
+    integrations idea and implementation

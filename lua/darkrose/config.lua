@@ -2,7 +2,12 @@ local M = {}
 
 M.options = {
   colors = {},
-  overrides = function() end,
+  overrides = function(_) end,
+  styles = {
+    bold = true,
+    italic = true,
+    underline = true,
+  },
 }
 
 M.setup = function(options)
