@@ -49,7 +49,7 @@ require("darkrose").setup({
     -- Styles to enable or disable
     styles = {
         bold = true, -- Enable bold highlights for some highlight groups
-        italics = true, -- Enable italic highlights for some highlight groups
+        italic = true, -- Enable italic highlights for some highlight groups
         underline = true, -- Enable underline highlights for some highlight groups
     }
 })
