@@ -15,14 +15,14 @@ M.generate = function(overrides)
 
     tags = {
       ranged_verbatim = {
-        begin = "+@PreProc",
+        begin = "+PreProc",
 
-        ["end"] = "+@PreProc",
+        ["end"] = "+PreProc",
 
         name = {
           [""] = "+@none",
-          delimiter = "+@PreProc",
-          word = "+@PreProc",
+          delimiter = "+PreProc",
+          word = "+PreProc",
         },
 
         parameters = "+@string",
@@ -30,7 +30,8 @@ M.generate = function(overrides)
         document_meta = {
           key = "+@field",
           value = "+@string",
-          trailing = "+@repeat",
+
+          trailing = "+@keyword",
           title = "+@text.title",
           description = "+@string",
           authors = "+@string",
@@ -40,23 +41,23 @@ M.generate = function(overrides)
           version = "+@string",
 
           object = {
-            bracket = "+@punctuation.bracket",
+            bracket = "+@operator",
           },
 
           array = {
-            bracket = "+@punctuation.bracket",
+            bracket = "+@operator",
             value = "+@string",
           },
         },
       },
 
       carryover = {
-        begin = "+@PreProc",
+        begin = "+PreProc",
 
         name = {
           [""] = "+@none",
-          word = "+@PreProc",
-          delimiter = "+@PreProc",
+          word = "+PreProc",
+          delimiter = "+PreProc",
         },
 
         parameters = "+@string",
