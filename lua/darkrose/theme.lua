@@ -453,6 +453,10 @@ M.generate = function()
     texSuperscript = { fg = c.orange },
     texTitle = { link = "Title" },
     texType = {},
+
+    -- NeoCodeium
+    NeoCodeiumLabel = { fg = c.bg, bg = c.orange },
+    NeoCodeiumSuggestion = { fg = c.syntax.comment },
   }
 
   theme.terminal = {
