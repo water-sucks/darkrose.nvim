@@ -433,8 +433,8 @@ M.generate = function()
 
     -- leap.nvim
     LeapMatch = { underline = styles.underline },
-    LeapLabelPrimary = { fg = c.bg_float, bg = c.pink },
-    LeapLabelSecondary = { fg = c.bg_float, bg = c.red },
+    LeapLabelPrimary = { fg = c.fg, bg = c.magenta },
+    LeapLabelSecondary = { fg = c.fg, bg = c.red },
 
     -- fidget.nvim
     FidgetTitle = { fg = c.pink, bold = styles.bold },
