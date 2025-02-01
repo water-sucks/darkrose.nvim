@@ -42,6 +42,7 @@ M.generate = function()
     Substitute = { fg = c.gray, bg = c.red }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.fg_dark }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CursorLineNr = { fg = u.shade(c.fg_dark, 50) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CurSearch = { fg = c.bg, bg = c.orange },
     MatchParen = { fg = c.fg, bg = c.fg_dark }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg, bold = styles.bold }, -- 'showmode' message (e.g., "-- INSERT -- ")
     MsgArea = { fg = c.fg }, -- Area for messages and cmdline
