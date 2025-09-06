@@ -5,21 +5,18 @@
 A dark, low-contrast colorscheme for Neovim inspired by roses and geared towards
 dark theme lovers.
 
+This repository is hosted on [sr.ht](sr.ht/~watersucks/optnix), with an official
+mirror on [GitHub](https://github.com/water-sucks/optnix).
+
 ## Screenshot
 
 ![image](https://i.imgur.com/pKIyzLy.png)
 
 ## Requirements
 
--   Neovim >= 0.9.0
+- Neovim >= 0.9.0
 
 ## Installation
-
-[packer.nvim](https://github.com/wbthomason/packer.nvim):
-
-```lua
-use("water-sucks/darkrose.nvim")
-```
 
 [lazy.nvim](https://github.com/folke/lazy.nvim)
 
@@ -62,26 +59,26 @@ names are defined [here](lua/darkrose/colors.lua).
 
 ## Plugins
 
-These are plugins explicitly supported by the colorscheme (more is always better,
-feel free to add more in a PR!):
+These are plugins explicitly supported by the colorscheme (more is always
+better, feel free to add more in a PR!):
 
--   LSP diagnostics
--   LSP semantic highlighting
--   [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)\*
--   [diffview.nvim](https://github.com/sindrets/diffview.nvim)
--   [fidget.nvim](https://github.com/j-hui/fidget.nvim)
--   [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
--   [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
--   [lazy.nvim](https://github.com/folke/lazy.nvim)
--   [neorg](https://github.com/nvim-neorg/neorg)\*
--   [noice.nvim](https://github.com/folke/noice.nvim)
--   [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
--   [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
--   [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
--   [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
--   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
--   [vimtex](https://github.com/lervag/vimtex)
--   [which-key.nvim](https://github.com/folke/which-key.nvim)
+- LSP diagnostics
+- LSP semantic highlighting
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)\*
+- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [neorg](https://github.com/nvim-neorg/neorg)\*
+- [noice.nvim](https://github.com/folke/noice.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [vimtex](https://github.com/lervag/vimtex)
+- [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### Special Integrations
 
@@ -109,8 +106,8 @@ require("bufferline").setup({
 <details>
 <summary>neorg</summary>
 
-Pass the highlighting integration as an argument to neorg's setup function.
-It must be loaded after darkrose is set up for this to work.
+Pass the highlighting integration as an argument to neorg's setup function. It
+must be loaded after darkrose is set up for this to work.
 
 ```lua
 -- Define overrides to any highlight arguments here; this is an optional argument
@@ -129,23 +126,21 @@ require("neorg").setup({
 
 </details>
 
-## Disclaimers
+## Contributing
 
-This is my first plugin; I threw together a bunch of colors that I liked, and this
-is the result. There is absolutely no color theory involved, and I'm not a graphic
-designer; however, I was not satisfied with any of the colorschemes for Neovim at
-the time of creation. If there are any problems with or ways to improve the
-colorscheme, please file an issue. I would love to make this colorscheme better
-for everyone.
+Prefer emailing patch sets to the
+[official development mailing list](mailto:~watersucks/darkrose.nvim-devel@lists.sr.ht).
 
-This is also extremely unstable, and breaking changes can be made at any time until
-a 1.0 release happens. This will happen when the colorscheme's colors are stabilized,
-and when more plugins and languages are supported.
+While the official repository is located on
+[sr.ht](https://git.sr.ht/~watersucks/darkrose.nvim), contributions are also
+accepted through GitHub using the
+[official mirror](https://github.com/water-sucks/darkrose.nvim), if desired.
 
 ## Thanks
 
--   [rose-pine/neovim](https://github.com/rose-pine/neovim) :: for inspiring the colorscheme
--   [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) :: for helping
-    me structure my code properly
--   [catppuccin/nvim](https://github.com/catppuccin/nvim) :: for the special
-    integrations idea and implementation
+- [rose-pine/neovim](https://github.com/rose-pine/neovim) :: for inspiring the
+  colorscheme
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) :: for
+  helping me structure my code properly
+- [catppuccin/nvim](https://github.com/catppuccin/nvim) :: for the special
+  integrations idea and implementation
